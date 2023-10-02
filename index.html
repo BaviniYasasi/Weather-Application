@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Application</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://icons8.com/icons/">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+</head>
+<body>
+     <!-- Nav bar -->
+     <nav>
+        <div class="navbar">
+            <ul>
+                <li>
+                    <a href="#" class="logo">
+                        <img src="assets/logo.img.jpg" alt="">
+                        <span class="nav-items">Empire Storm</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='bx bxs-home'></i>
+                        <span class="nav-items">Home</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="logIn.html">
+                        <i class='bx bxs-user-circle'></i>
+                        <span class="nav-items">Profile</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='bx bxs-bell'></i>
+                        <span class="nav-items">Notifications</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="history.html">
+                        <i class='bx bx-history'></i>
+                        <span class="nav-items">History</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='bx bxs-cog' ></i>
+                        <span class="nav-items">Settings</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="logout">
+                        <i class='bx bx-log-out'></i>
+                        <span class="nav-items">Log-Out</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+        <!-- Nav bar ending -->
+        <!-- search bar -->
+        <div class="container">
+            <div class="search-bar">
+                <input type="text" name="" id="search" placeholder="Search for city here" value="Colombo">
+                <button onclick="findBtnClicked()" class="btn-search"> <img class="img-search" src="assets/magnifying-glass.png" alt=""></button>
+            </div>
+        <!-- search bar ends -->
+        <!-- language -->
+            <div class="eng">
+                <label for="language">ENG</label>
+                <img class="img-dropdown" src="assets/down-arrow.png" alt="">
+            </div>
+        <!-- language ends -->
+        <!-- dark mode -->
+            <div class="dark">
+                <img id="nightModeImg" class="img-night" src="assets/night-mode.png" alt="">
+                <img id="lightModeImg" class="img-day" src="assets/brightness.png" alt="">
+            </div>
+        </div>
+        <!-- dark mode -->
+        <!-- current weather -->
+        <div class="main1">
+            <div class="current-we">
+                <div class="full-condition">
+                    <div class="condition">
+                        <label id="weather-condition"></label><br>
+                        <img class="wea-con" id="img-weather" src="assets/weather/weather/64x64/day/116.png" alt="">
+                        <label class="location" ><h3 id="loc-current">Panadura</h3><h6 id="loc-country">Sri Lanka</h6></label>
+
+                    </div>
+                    <div class="time-Date">
+                        <label id="time"></label><br>
+                        <label id="day-name"></label> <br>
+                        <label id="day"></label>
+                    </div>
+                </div>
+                <div class="weather-conditions">
+                    <div class="condition-one">
+                        <div class="temp">
+                            <img src="assets/icons8-temperature-32.png" alt=""><br>
+                            <label id="temp">28℃</label><br>
+                            <label>Tempreture</label>
+        
+                        </div>
+                        <div class="humi">
+                            <img src="assets/icons8-humidity-30.png" alt=""><br>
+                            <label id="humi">24%</label><br>
+                            <label>Humidity</label>
+        
+                        </div>
+                        <div class="wind">
+                            <img src="assets/icons8-wind-speed-43-47-30.png" alt=""><br>
+                            <label id="wind">13kmp/h</label><br>
+                            <label>Wind Speed</label>
+        
+                        </div>
+                    </div>
+                    <div class="condition-one">
+                        <div class="rain">
+                            <img src="assets/icons8-rainfall-30.png" alt=""><br>
+                            <label id="rain">20mm</label><br>
+                            <label>Precipitation</label>
+        
+                        </div>
+                        <div class="uv">
+                            <img src="assets/icons8-uv-index-64 (1).png" alt="" width="40vw"><br>
+                            <label id="uv">3</label><br>
+                            <label>UV index</label>
+        
+                        </div>
+                        <div class="sun-set">
+                            <img src="assets/icons8-visibility-24.png" alt=""><br>
+                            <label id="visibility">200 Dm</label><br>
+                            <label>visibility</label>
+        
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <!-- current weather ends -->
+            <!-- map & forecast -->
+
+            <div class="main2">
+                <div class="map" id="map">
+                    <div class="img-map"  ></div>
+                    <!-- <iframe class="img-map" id="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d948.2087271959679!2d79.90702083725655!3d6.723045031488707!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae247a4c04ae595%3A0x4060e3527ce41470!2siCET%20-%20Institute%20of%20Computer%20Engineering%20Technology%20(Pvt)%20Ltd!5e0!3m2!1sen!2slk!4v1695715689506!5m2!1sen!2slk" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> -->
+                </div>
+
+                <div class="header">
+                    <h3>Forecast</h3>
+                    <div class="forecast">
+                        <div class="fd-8">
+                            <label class="fd-1-lbl-1" id="date-1">23/09</label>
+                            <label class="lbl-day" id="day-1">Sat</label>
+                            <img class="img-fd-3" id="img-1" src="assets/weather/weather/64x64/day/176.png" alt="">
+                            <label class="fd-1-lbl-3" id="fore-con">Rainy</label>
+                        </div>
+                        <div class="fd-8">
+                            <label class="fd-1-lbl-1" id="date-2">23/09</label>
+                            <label class="lbl-day" id="day-2">Sat</label>
+                            <img class="img-fd-3" id="img-2" src="assets/weather/weather/64x64/day/176.png" alt="">
+                            <label class="fd-1-lbl-3" id="fore-con-1">Rainy</label>
+                        </div>
+                        <div class="fd-8">
+                            <label class="fd-1-lbl-1" id="date-3">23/09</label>
+                            <label class="lbl-day" id="day-3">Sat</label>
+                            <img class="img-fd-3" id="img-3" src="assets/weather/weather/64x64/day/176.png" alt="">
+                            <label class="fd-1-lbl-3" id="fore-con-2">Rainy</label>
+                        </div>             
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+            <!-- map & forecast ends -->
+            <!-- previous data -->
+            <div class="main3">
+                <div class="previous">
+                    <label class="fd-1-lbl-1"><h3>Previous Day</h3><br><h6>Up to 7 days</h6></label>
+                </div>
+                <div class="fd-1">
+                    <label class="fd-1-lbl-2" id="pre-day-1">23/09</label>
+                    <label class="lbl-day1" id="pre-day-1-day">Sat</label>
+                    <img class="img-fd-2" id="pre-day-1-img" src="assets/weather/weather/64x64/day/176.png" alt="">
+                    <label class="fd-1-lbl-4" id="pre-day-1-con">Rainy</label>
+                    <label class="lbl-day2" id="pre-day-1-temp">28℃</label>
+                 </div>
+                <div class="fd-2">
+                    <label class="fd-1-lbl-2" id="pre-day-2">23/09</label>
+                    <label class="lbl-day1" id="pre-day-2-day">Sat</label>
+                    <img class="img-fd-2" id="pre-day-2-img" src="assets/weather/weather/64x64/day/176.png" alt="">
+                    <label class="fd-1-lbl-4" id="pre-day-2-con">Rainy</label>
+                    <label class="lbl-day2" id="pre-day-2-temp">28℃</label>
+                </div>
+                <div class="fd-3">
+                    <label class="fd-1-lbl-2" id="pre-day-3">23/09</label>
+                    <label class="lbl-day1" id="pre-day-3-day">Sat</label>
+                    <img class="img-fd-2" id="pre-day-3-img" src="assets/weather/weather/64x64/day/176.png" alt="">
+                    <label class="fd-1-lbl-4" id="pre-day-3-con">Rainy</label>
+                    <label class="lbl-day2" id="pre-day-3-temp">28℃</label>
+                </div>
+                <div class="fd-4">
+                    <label class="fd-1-lbl-2" id="pre-day-4">23/09</label>
+                    <label class="lbl-day1" id="pre-day-4-day">Sat</label>
+                    <img class="img-fd-2" id="pre-day-4-img" src="assets/weather/weather/64x64/day/176.png" alt="">
+                    <label class="fd-1-lbl-4" id="pre-day-4-con">Rainy</label>
+                    <label class="lbl-day2" id="pre-day-4-temp">28℃</label>
+                </div>
+                <div class="fd-5">
+                    <label class="fd-1-lbl-2" id="pre-day-5">23/09</label>
+                    <label class="lbl-day1" id="pre-day-5-day">Sat</label>
+                    <img class="img-fd-2" id="pre-day-5-img" src="assets/weather/weather/64x64/day/176.png" alt="">
+                    <label class="fd-1-lbl-4" id="pre-day-5-con">Rainy</label>
+                    <label class="lbl-day2" id="pre-day-5-temp">28℃</label>
+                </div>
+                <div class="fd-6">
+                    <label class="fd-1-lbl-2" id="pre-day-6">23/09</label>
+                    <label class="lbl-day1" id="pre-day-6-day">Sat</label>
+                    <img class="img-fd-2" id="pre-day-6-img" src="assets/weather/weather/64x64/day/176.png" alt="">
+                    <label class="fd-1-lbl-4" id="pre-day-6-con">Rainy</label>
+                    <label class="lbl-day2" id="pre-day-6-temp">28℃</label>
+                </div>
+                <div class="fd-7">
+                    <label class="fd-1-lbl-2" id="pre-day-7">23/09</label>
+                    <label class="lbl-day1" id="pre-day-7-day">Sat</label>
+                    <img class="img-fd-2" id="pre-day-7-img" src="assets/weather/weather/64x64/day/176.png" alt="">
+                     <label class="fd-1-lbl-4" id="pre-day-7-con">Rainy</label>
+                     <label class="lbl-day2" id="pre-day-7-temp">28℃</label>
+                </div>
+            </div>
+            <!-- previous data ends -->
+        <!-- Footer -->    
+        <div class="footer">
+            <article id="wrap">
+                <div class="description">
+                    <div class="foter-des">
+                        <img class="logo-2" src="assets/logo.img.jpg" alt=""><br>
+                        <h5>Empire Storm</h5><br><h6>© Bavini Yasasi</h6>
+                    </div>
+                    <div class="foter-des1">
+                        <h4>About us</h4>
+                        <hr class="h2">
+                        <p>Welcome to Empire storm.com , <br>
+                            your go-to source for accurate and user-friendly weather forecasts. <br>
+                            We're dedicated to keeping you informed and safe, no matter where you are. <br>
+                            Subscribe now and stay ahead of the weather!
+                        </p>                    
+                    </div>
+                    <div class="foter-des2">
+                        <h4>Contact us</h4>
+                        <hr class="h1">
+                        <table class="table">
+                            <tr>
+                                <td>Name :</td>
+                                <td class="td-2"><input class="td-da" type="text" placeholder="Enter Your Name"></td>
+                            </tr>
+                            <tr>
+                                <td>Email :</td>
+                                <td class="td-2"><input class="td-da" type="text" placeholder="Enter Your Email"></td>
+                            </tr>
+                            <tr>
+                                <td>Message:</td>
+                                <td class="td-2"><input class="td-data" type="text" placeholder="Enter Your Message"></td>
+                            </tr>
+                            <tr>
+                                <td> </td>
+                                <td><button class="btn-submit">Submit</button></td>
+                            </tr>
+                        </table>                
+                    </div>
+                </div>
+                
+                <article id="lightings">
+                    <section id="one">
+                        <section id="two">
+                            <section id="three">
+                                <section id="four">
+                                    <section id="five">
+                                        
+                                    
+                                    </section>
+                                </section>
+                            </section>
+                        </section>
+                    </section>
+                </article>
+            </article>
+        </div>  
+    <!-- Footer ends --> 
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA1L2kgtpbmnNFFAc0NafEvSGUH9i40RlQ&libraries=places&callback=myMap"></script>
+<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>       
+<script src="js/index.js"></script>
+<script src="js/api.js"></script>
+    
+</body>
+</html>
